@@ -1,0 +1,120 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for English (`en`).
+class AppLocalizationsEn extends AppLocalizations {
+  AppLocalizationsEn([String locale = 'en']) : super(locale);
+
+  @override
+  String get iTeach => 'ITeach';
+
+  @override
+  String get iT => 'IT';
+
+  @override
+  String get akademiyasi => 'Academy';
+
+  @override
+  String get logotext =>
+      'Unified management system for students, teachers, and administrators.';
+
+  @override
+  String get tizimga => 'Sign in';
+
+  @override
+  String get hisobingizgaKiring => 'Log in to your account';
+
+  @override
+  String get login => 'Log In';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get enterLogin => 'Enter login';
+
+  @override
+  String get enterPassword => 'Enter password';
+
+  @override
+  String get contactAdmin => 'Contact admin';
+
+  @override
+  String get loginCannotBeEmpty => 'Login field cannot be empty';
+
+  @override
+  String get passwordCannotBeEmpty => 'Password field cannot be empty';
+
+  @override
+  String get passwordTooShort => 'Password cannot be less than 6 characters';
+
+  @override
+  String get userNotFound => 'User not found, please try again';
+
+  @override
+  String get serverConnectionError =>
+      'No connection to the server! Please check your internet or the server might be down.';
+
+  @override
+  String get unstableNetworkOrServerError => 'Unstable network or server error';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get groups => 'Groups';
+
+  @override
+  String get tasks => 'Tasks';
+
+  @override
+  String get rating => 'Rating';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get myGroups => 'My Groups';
+
+  @override
+  String get emptyGroups => 'No groups available yet.';
+
+  @override
+  String get emptyTasks => 'No tasks available yet.';
+
+  @override
+  String get todaysLessons => 'Today\'s lessons';
+
+  @override
+  String lessonsCount(Object count) {
+    return 'You have $count lessons today';
+  }
+
+  @override
+  String timeAt(Object time) {
+    return 'at $time';
+  }
+
+  @override
+  String get started => 'Started';
+
+  @override
+  String lessonTime(Object time) {
+    return '$time started';
+  }
+
+  @override
+  String get activeGroups => 'Active groups';
+
+  @override
+  String get inactiveGroups => 'Inactive groups';
+
+  @override
+  String get active => 'Active';
+
+  @override
+  String get inactive => 'Inactive';
+}
