@@ -7,6 +7,7 @@ sealed class LoginState {
   final Token? token;
   final bool toHider;
 
+
   const LoginState({this.token, this.toHider = true});
 }
 

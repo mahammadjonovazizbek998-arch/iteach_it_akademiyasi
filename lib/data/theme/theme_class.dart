@@ -11,7 +11,9 @@ class ThemeClass extends ThemeExtension<ThemeClass> {
       selectedItemColor,
       unselectedItemColor,
       containerBuilder,
-      dataColor;
+      dataColor,
+      profilColor,
+      roleColor;
 
   ThemeClass({
     required this.logoBegin,
@@ -25,6 +27,8 @@ class ThemeClass extends ThemeExtension<ThemeClass> {
     required this.unselectedItemColor,
     required this.containerBuilder,
     required this.dataColor,
+    required this.profilColor,
+    required this.roleColor,
   });
 
   @override
@@ -41,6 +45,8 @@ class ThemeClass extends ThemeExtension<ThemeClass> {
       unselectedItemColor: unselectedItemColor,
       containerBuilder: containerBuilder,
       dataColor: dataColor,
+      profilColor: profilColor,
+      roleColor: roleColor,
     );
   }
 
@@ -66,6 +72,8 @@ class ThemeClass extends ThemeExtension<ThemeClass> {
       )!,
       containerBuilder: Color.lerp(containerBuilder, containerBuilder, t)!,
       dataColor: Color.lerp(dataColor, dataColor, t)!,
+      profilColor: Color.lerp(profilColor, profilColor, t)!,
+      roleColor: Color.lerp(roleColor, roleColor, t)!,
     );
   }
 }
@@ -82,6 +90,8 @@ final ThemeClass lightCustom = ThemeClass(
   unselectedItemColor: Color(0xE5413F47),
   containerBuilder: Color(0xFF5047E5),
   dataColor: Color(0xFF2F3282),
+  profilColor: Color(0xFF3829CD),
+  roleColor: Color(0xFFDAE2FD),
 );
 final ThemeClass darkCustom = ThemeClass(
   logoBegin: Color(0xFF121212),
@@ -95,4 +105,6 @@ final ThemeClass darkCustom = ThemeClass(
   unselectedItemColor: Color(0xFF5D6587),
   containerBuilder: Color(0xFF1D224A),
   dataColor: Color(0xFF5047E5),
+  profilColor: Color(0xFFC3C0FF),
+  roleColor: Color(0xFF272553),
 );

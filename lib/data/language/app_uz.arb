@@ -32,5 +32,22 @@
   "activeGroups":	"Faol guruhlar",
   "inactiveGroups": "Faol bo‘lmagan guruhlar",
   "active": "Faol",
-  "inactive": "Nofaol"
+  "inactive": "Nofaol",
+  "profileLoading": "Profil ma’lumotlari tayyorlanmoqda...",
+  "data": "Ma’lumotlar",
+  "loginLabel": "Login",
+  "phoneNumber": "Telefon raqami",
+  "biography": "Biografiya",
+  "biographyFieldEmpty": "Biografiya maydoni bo‘sh",
+  "editProfile": "Profilni tahrirlash",
+  "editBio": "Biografiyani tahrirlash",
+  "personalInfo": "Shaxsiy ma’lumotlar",
+  "save": "Saqlash",
+  "cancel": "Bekor qilish",
+  "noChangesDetected": "O'zgarish mavjud emas",
+  "editPersonalInfo": "Shaxsiy ma'lumotlarni tahrirlash",
+  "fullName": "To‘liq ism",
+  "username": "Foydalanuvchi nomi",
+  "invalidFullName": "Ism maydoni bo‘sh yoki noto‘g‘ri to‘ldirilgan",
+  "invalidPhoneNumber": "Telefon raqami bo‘sh yoki noto‘g‘ri kiritilgan"
 }

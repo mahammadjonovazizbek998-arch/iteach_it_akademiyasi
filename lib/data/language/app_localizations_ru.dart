@@ -119,4 +119,55 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get inactive => 'Неактивный';
+
+  @override
+  String get profileLoading => 'Загрузка профиля...';
+
+  @override
+  String get data => 'Данные';
+
+  @override
+  String get loginLabel => 'Войти';
+
+  @override
+  String get phoneNumber => 'Номер телефона';
+
+  @override
+  String get biography => 'Биография';
+
+  @override
+  String get biographyFieldEmpty => 'Поле биографии пусто';
+
+  @override
+  String get editProfile => 'Редактировать профиль';
+
+  @override
+  String get editBio => 'Редактировать биографию';
+
+  @override
+  String get personalInfo => 'Личная информация';
+
+  @override
+  String get save => 'Сохранить';
+
+  @override
+  String get cancel => 'Отмена';
+
+  @override
+  String get noChangesDetected => 'Изменений нет';
+
+  @override
+  String get editPersonalInfo => 'Редактировать личную информацию';
+
+  @override
+  String get fullName => 'ФИО';
+
+  @override
+  String get username => 'Имя пользователя';
+
+  @override
+  String get invalidFullName => 'Поле имени пустое или заполнено неверно';
+
+  @override
+  String get invalidPhoneNumber => 'Номер телефона пуст или введен неверно';
 }

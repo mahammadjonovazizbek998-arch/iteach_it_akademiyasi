@@ -3,8 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iteach_it_akademiyasi/data/language/app_localizations.dart';
 import 'package:iteach_it_akademiyasi/data/users/groups/student_groups_class.dart';
-import 'package:iteach_it_akademiyasi/logon/home_cubit/home_cubit.dart';
+import 'package:iteach_it_akademiyasi/logon/api_cubit/api_cubit.dart';
+import 'package:iteach_it_akademiyasi/logon/student/groups/groups_cubit.dart';
+
 import 'package:iteach_it_akademiyasi/presentation/student/groups_page/component/component.dart';
+
 import 'package:iteach_it_akademiyasi/presentation/student/groups_page/component/groups_component.dart';
 
 class GroupsPage extends StatelessWidget {
@@ -13,7 +16,7 @@ class GroupsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final myLanguage = AppLocalizations.of(context)!;
-    return Scaffold(
+    return  Scaffold(
       appBar: AppBar(
         title: Text(myLanguage.groups),
         centerTitle: true,
@@ -21,13 +24,12 @@ class GroupsPage extends StatelessWidget {
           IconButton(onPressed: () {}, icon: Icon(Icons.search_rounded)),
         ],
       ),
-      body: BlocBuilder<HomeCubit, HomeState>(
+      body: BlocBuilder<GroupsCubit, GroupsState>(
         builder: (context, state) {
-          if (state.studentGroupsClass != null &&
-              (state.faol != null || state.noFaol != null)) {
+          if (state.faol != null || state.noFaol != null) {
             return CustomScrollView(
               slivers: [
-                if (state.studentGroupsClass != null)
+                if (state.faol != null || state.noFaol != null)
                   SliverPadding(
                     padding: .symmetric(vertical: 15.w, horizontal: 15.h),
                     sliver: SliverMainAxisGroup(
@@ -55,15 +57,19 @@ class GroupsPage extends StatelessWidget {
                                 itemCount: state.faol!.length,
                                 itemBuilder: (ctx, index) {
                                   StudentGroupsClass studentGroupsClass =
-                                      state.faol![index];
+                                  state.faol![index];
                                   return GroupsComponent(
-                                    studentGroupsClass: studentGroupsClass,groupClas: state.groupClasFaol![index],
+                                    studentGroupsClass:
+                                    studentGroupsClass,
+                                    groupClas:
+                                    state.groupClasFaol![index],
                                   );
                                 },
                               ),
                             ],
                           ),
-                        if (state.noFaol != null && state.noFaol!.isNotEmpty)
+                        if (state.noFaol != null &&
+                            state.noFaol!.isNotEmpty)
                           SliverMainAxisGroup(
                             slivers: [
                               SliverToBoxAdapter(
@@ -78,7 +84,10 @@ class GroupsPage extends StatelessWidget {
                                   StudentGroupsClass studentGroupsClass =
                                   state.noFaol![index];
                                   return GroupsComponent(
-                                    studentGroupsClass: studentGroupsClass,groupClas: state.groupClasNoFaol![index],
+                                    studentGroupsClass:
+                                    studentGroupsClass,
+                                    groupClas:
+                                    state.groupClasNoFaol![index],
                                   );
                                 },
                               ),
@@ -89,6 +98,9 @@ class GroupsPage extends StatelessWidget {
                   ),
               ],
             );
+          }
+          if (state is GroupsLoding) {
+            return Center(child: CircularProgressIndicator());
           }
           return Center(child: Text(myLanguage.emptyGroups));
         },

@@ -5,6 +5,8 @@ import 'package:iteach_it_akademiyasi/data/auth_service.dart';
 import 'package:iteach_it_akademiyasi/data/users/groups/group_class.dart';
 import 'package:iteach_it_akademiyasi/data/users/groups/login_class.dart';
 import 'package:iteach_it_akademiyasi/data/users/groups/student_groups_class.dart';
+import 'package:iteach_it_akademiyasi/data/users/users/users.dart';
+import 'package:iteach_it_akademiyasi/data/users/users/users_profile.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -12,6 +14,7 @@ import 'package:url_launcher/url_launcher.dart';
 class AuthRepository {
   final ApiService _apiService = ApiService();
 
+  //login
   Future<dynamic> signIn(String login, String parol) async {
     try {
       final response = await _apiService.login(login, parol);
@@ -41,7 +44,7 @@ class AuthRepository {
         if (data["error"] != null) {
           return data["error"]["message"] ?? "Xatolik yuz berdi";
         }
-        return data;
+        return Token.fromJson(data);
       }
       return data["message"];
     } catch (e) {
@@ -83,6 +86,7 @@ class AuthRepository {
     }
   }
 
+  //gruhlar
   Future<dynamic> studentGroup(String token) async {
     try {
       final response = await _apiService.iGroups(token);
@@ -152,6 +156,67 @@ class AuthRepository {
 
     if (await canLaunchUrl(smsUri)) {
       await launchUrl(smsUri);
+    }
+  }
+
+  //profile
+  Future<dynamic> iProfile(String token) async {
+    try {
+      final response = await _apiService.myProfile(token);
+      if (response.statusCode < 400) {
+        final Map<String, dynamic> data = jsonDecode(response.body);
+
+        return IProfile.formJson(data);
+      }
+      if (response.statusCode == 401) {
+        return "401";
+      }
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  Future<dynamic> profilr(String token) async {
+    try {
+      final response = await _apiService.userProfile(token);
+      if (response.statusCode < 400) {
+        final Map<String, dynamic> data = jsonDecode(response.body);
+        return UsersProfile.formJson(data);
+      }
+      if (response.statusCode == 401) {
+        return "401";
+      }
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  Future<dynamic> bio(String bioMatin, String token) async {
+    try {
+      final response = await _apiService.bio(bioMatin, token);
+      if (response.statusCode < 400) {
+        return "200";
+      }
+      if (response.statusCode == 401) {
+        return "401";
+      }
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  Future<dynamic> putProfile(String token, IProfile iProfile) async {
+    try {
+      final response = await _apiService.putProfile(token, iProfile);
+      print("salom ${response.statusCode}");
+      if (response.statusCode < 400) {
+        return "200";
+      }
+      if (response.statusCode == 401) {
+        return "401";
+      }
+    } catch (e) {
+      return e.toString();
     }
   }
 }

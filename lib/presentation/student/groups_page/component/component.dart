@@ -15,8 +15,8 @@ class Component extends StatelessWidget {
     final myLanguage = AppLocalizations.of(context)!;
     return Container(
       padding: .symmetric(vertical: 20.w, horizontal: 20.h),
-      width: 320.w,
-      height: 138.h,
+      width: double.infinity,
+      constraints: BoxConstraints(minHeight: 138.h),
       decoration: BoxDecoration(
         color: myTheme.containerBuilder,
         borderRadius: .circular(25),

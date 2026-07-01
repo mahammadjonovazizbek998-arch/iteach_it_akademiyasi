@@ -303,6 +303,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Inactive'**
   String get inactive;
+
+  /// No description provided for @profileLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading profile details...'**
+  String get profileLoading;
+
+  /// No description provided for @data.
+  ///
+  /// In en, this message translates to:
+  /// **'Data'**
+  String get data;
+
+  /// No description provided for @loginLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get loginLabel;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone number'**
+  String get phoneNumber;
+
+  /// No description provided for @biography.
+  ///
+  /// In en, this message translates to:
+  /// **'Biography'**
+  String get biography;
+
+  /// No description provided for @biographyFieldEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Biography field is empty'**
+  String get biographyFieldEmpty;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit profile'**
+  String get editProfile;
+
+  /// No description provided for @editBio.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit biography'**
+  String get editBio;
+
+  /// No description provided for @personalInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal information'**
+  String get personalInfo;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @noChangesDetected.
+  ///
+  /// In en, this message translates to:
+  /// **'No changes detected'**
+  String get noChangesDetected;
+
+  /// No description provided for @editPersonalInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit personal information'**
+  String get editPersonalInfo;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name'**
+  String get fullName;
+
+  /// No description provided for @username.
+  ///
+  /// In en, this message translates to:
+  /// **'Username'**
+  String get username;
+
+  /// No description provided for @invalidFullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name field is empty or invalid'**
+  String get invalidFullName;
+
+  /// No description provided for @invalidPhoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone number is empty or invalid'**
+  String get invalidPhoneNumber;
 }
 
 class _AppLocalizationsDelegate

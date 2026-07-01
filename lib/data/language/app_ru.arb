@@ -32,5 +32,22 @@
   "activeGroups": "Активные группы",
   "inactiveGroups": "Неактивные группы",
   "active": "Активный",
-  "inactive": "Неактивный"
+  "inactive": "Неактивный",
+  "profileLoading": "Загрузка профиля...",
+  "data": "Данные",
+  "loginLabel": "Войти",
+  "phoneNumber": "Номер телефона",
+  "biography": "Биография",
+  "biographyFieldEmpty": "Поле биографии пусто",
+  "editProfile": "Редактировать профиль",
+  "editBio": "Редактировать биографию",
+  "personalInfo": "Личная информация",
+  "save": "Сохранить",
+  "cancel": "Отмена",
+  "noChangesDetected": "Изменений нет",
+  "editPersonalInfo": "Редактировать личную информацию",
+  "fullName": "ФИО",
+  "username": "Имя пользователя",
+  "invalidFullName": "Поле имени пустое или заполнено неверно",
+  "invalidPhoneNumber": "Номер телефона пуст или введен неверно"
 }

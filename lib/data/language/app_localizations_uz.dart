@@ -120,4 +120,56 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get inactive => 'Nofaol';
+
+  @override
+  String get profileLoading => 'Profil ma’lumotlari tayyorlanmoqda...';
+
+  @override
+  String get data => 'Ma’lumotlar';
+
+  @override
+  String get loginLabel => 'Login';
+
+  @override
+  String get phoneNumber => 'Telefon raqami';
+
+  @override
+  String get biography => 'Biografiya';
+
+  @override
+  String get biographyFieldEmpty => 'Biografiya maydoni bo‘sh';
+
+  @override
+  String get editProfile => 'Profilni tahrirlash';
+
+  @override
+  String get editBio => 'Biografiyani tahrirlash';
+
+  @override
+  String get personalInfo => 'Shaxsiy ma’lumotlar';
+
+  @override
+  String get save => 'Saqlash';
+
+  @override
+  String get cancel => 'Bekor qilish';
+
+  @override
+  String get noChangesDetected => 'O\'zgarish mavjud emas';
+
+  @override
+  String get editPersonalInfo => 'Shaxsiy ma\'lumotlarni tahrirlash';
+
+  @override
+  String get fullName => 'To‘liq ism';
+
+  @override
+  String get username => 'Foydalanuvchi nomi';
+
+  @override
+  String get invalidFullName => 'Ism maydoni bo‘sh yoki noto‘g‘ri to‘ldirilgan';
+
+  @override
+  String get invalidPhoneNumber =>
+      'Telefon raqami bo‘sh yoki noto‘g‘ri kiritilgan';
 }

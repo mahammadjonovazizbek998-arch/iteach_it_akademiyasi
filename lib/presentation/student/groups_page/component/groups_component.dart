@@ -5,7 +5,8 @@ import 'package:iteach_it_akademiyasi/data/language/app_localizations.dart';
 import 'package:iteach_it_akademiyasi/data/theme/theme_class.dart';
 import 'package:iteach_it_akademiyasi/data/users/groups/group_class.dart';
 import 'package:iteach_it_akademiyasi/data/users/groups/student_groups_class.dart';
-import 'package:iteach_it_akademiyasi/logon/home_cubit/home_cubit.dart';
+import 'package:iteach_it_akademiyasi/logon/student/groups/groups_cubit.dart';
+
 
 class GroupsComponent extends StatelessWidget {
   final StudentGroupsClass studentGroupsClass;
@@ -163,7 +164,7 @@ class GroupsComponent extends StatelessWidget {
                       ),
                       child: GestureDetector(
                         onTap: () {
-                          context.read<HomeCubit>().contactSms(groupClas!.teachers[0].phoneNumber);
+                          context.read<GroupsCubit>().contactSms(groupClas!.teachers[0].phoneNumber);
                         },
                         child: Icon(Icons.message_outlined),
                       ),
@@ -177,7 +178,7 @@ class GroupsComponent extends StatelessWidget {
                       ),
                       child: GestureDetector(
                         onTap: () {
-                          context.read<HomeCubit>().contact(groupClas!.teachers[0].phoneNumber);
+                          context.read<GroupsCubit>().contact(groupClas!.teachers[0].phoneNumber);
                         },
                         child: Icon(Icons.phone),
                       ),

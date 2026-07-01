@@ -117,4 +117,55 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get inactive => 'Inactive';
+
+  @override
+  String get profileLoading => 'Loading profile details...';
+
+  @override
+  String get data => 'Data';
+
+  @override
+  String get loginLabel => 'Login';
+
+  @override
+  String get phoneNumber => 'Phone number';
+
+  @override
+  String get biography => 'Biography';
+
+  @override
+  String get biographyFieldEmpty => 'Biography field is empty';
+
+  @override
+  String get editProfile => 'Edit profile';
+
+  @override
+  String get editBio => 'Edit biography';
+
+  @override
+  String get personalInfo => 'Personal information';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get noChangesDetected => 'No changes detected';
+
+  @override
+  String get editPersonalInfo => 'Edit personal information';
+
+  @override
+  String get fullName => 'Full name';
+
+  @override
+  String get username => 'Username';
+
+  @override
+  String get invalidFullName => 'Name field is empty or invalid';
+
+  @override
+  String get invalidPhoneNumber => 'Phone number is empty or invalid';
 }

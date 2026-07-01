@@ -32,5 +32,22 @@
   "activeGroups":	"Active groups",
   "inactiveGroups": "Inactive groups",
   "active": "Active",
-  "inactive": "Inactive"
+  "inactive": "Inactive",
+  "profileLoading": "Loading profile details...",
+  "data": "Data",
+  "loginLabel": "Login",
+  "phoneNumber": "Phone number",
+  "biography": "Biography",
+  "biographyFieldEmpty": "Biography field is empty",
+  "editProfile": "Edit profile",
+  "editBio": "Edit biography",
+  "personalInfo": "Personal information",
+  "save": "Save",
+  "cancel": "Cancel",
+  "noChangesDetected": "No changes detected",
+  "editPersonalInfo": "Edit personal information",
+  "fullName": "Full name",
+  "username": "Username",
+  "invalidFullName": "Name field is empty or invalid",
+  "invalidPhoneNumber": "Phone number is empty or invalid"
 }
