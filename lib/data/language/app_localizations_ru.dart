@@ -170,4 +170,64 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get invalidPhoneNumber => 'Номер телефона пуст или введен неверно';
+
+  @override
+  String get ratingLoading => 'Загрузка данных страницы рейтинга...';
+
+  @override
+  String get ratingLoadError =>
+      'Произошла ошибка при загрузке данных страницы рейтинга';
+
+  @override
+  String get all => 'Все';
+
+  @override
+  String get month => 'Месяц';
+
+  @override
+  String get week => 'Неделя';
+
+  @override
+  String get score => 'Балл';
+
+  @override
+  String get tasksLoading => 'Загрузка данных страницы заданий...';
+
+  @override
+  String get tasksLoadError =>
+      'Произошла ошибка при загрузке данных страницы заданий';
+
+  @override
+  String get noDataFound => 'На данный момент данных нет';
+
+  @override
+  String greetingWithName(Object name) {
+    return 'Мир вам, $name!';
+  }
+
+  @override
+  String get greatDayToLearn => 'Сегодня отличный день для обучения.';
+
+  @override
+  String fourItems(Object n) {
+    return '$n шт';
+  }
+
+  @override
+  String get newTasks => 'Новые задания';
+
+  @override
+  String get sentItems => 'Отправленные';
+
+  @override
+  String get submitTask => 'Сдать задание';
+
+  @override
+  String get noTasksAvailable => 'У вас нет заданий';
+
+  @override
+  String get taskFiles => 'Файлы задания';
+
+  @override
+  String get gradedItems => 'Оцененные';
 }

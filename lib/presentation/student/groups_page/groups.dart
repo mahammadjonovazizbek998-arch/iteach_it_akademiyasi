@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iteach_it_akademiyasi/data/language/app_localizations.dart';
 import 'package:iteach_it_akademiyasi/data/users/groups/student_groups_class.dart';
-import 'package:iteach_it_akademiyasi/logon/api_cubit/api_cubit.dart';
 import 'package:iteach_it_akademiyasi/logon/student/groups/groups_cubit.dart';
 
 import 'package:iteach_it_akademiyasi/presentation/student/groups_page/component/component.dart';
@@ -16,7 +15,7 @@ class GroupsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final myLanguage = AppLocalizations.of(context)!;
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text(myLanguage.groups),
         centerTitle: true,
@@ -29,18 +28,22 @@ class GroupsPage extends StatelessWidget {
           if (state.faol != null || state.noFaol != null) {
             return CustomScrollView(
               slivers: [
+                SliverToBoxAdapter(child: Divider()),
                 if (state.faol != null || state.noFaol != null)
                   SliverPadding(
-                    padding: .symmetric(vertical: 15.w, horizontal: 15.h),
+                    padding: .symmetric( horizontal: 15.h),
                     sliver: SliverMainAxisGroup(
                       slivers: [
                         if (state.today != 0)
                           SliverToBoxAdapter(
-                            child: Component(
-                              today: state.today,
-                              startTime: state.startTime
-                                  .substring(0, 5)
-                                  .toString(),
+                            child: Padding(
+                              padding:.symmetric(vertical: 15.w,) ,
+                              child: Component(
+                                today: state.today,
+                                startTime: state.startTime
+                                    .substring(0, 5)
+                                    .toString(),
+                              ),
                             ),
                           ),
                         SliverToBoxAdapter(child: SizedBox(height: 13.h)),
@@ -57,19 +60,16 @@ class GroupsPage extends StatelessWidget {
                                 itemCount: state.faol!.length,
                                 itemBuilder: (ctx, index) {
                                   StudentGroupsClass studentGroupsClass =
-                                  state.faol![index];
+                                      state.faol![index];
                                   return GroupsComponent(
-                                    studentGroupsClass:
-                                    studentGroupsClass,
-                                    groupClas:
-                                    state.groupClasFaol![index],
+                                    studentGroupsClass: studentGroupsClass,
+                                    groupClas: state.groupClasFaol![index],
                                   );
                                 },
                               ),
                             ],
                           ),
-                        if (state.noFaol != null &&
-                            state.noFaol!.isNotEmpty)
+                        if (state.noFaol != null && state.noFaol!.isNotEmpty)
                           SliverMainAxisGroup(
                             slivers: [
                               SliverToBoxAdapter(
@@ -82,12 +82,10 @@ class GroupsPage extends StatelessWidget {
                                 itemCount: state.noFaol!.length,
                                 itemBuilder: (ctx, index) {
                                   StudentGroupsClass studentGroupsClass =
-                                  state.noFaol![index];
+                                      state.noFaol![index];
                                   return GroupsComponent(
-                                    studentGroupsClass:
-                                    studentGroupsClass,
-                                    groupClas:
-                                    state.groupClasNoFaol![index],
+                                    studentGroupsClass: studentGroupsClass,
+                                    groupClas: state.groupClasNoFaol![index],
                                   );
                                 },
                               ),

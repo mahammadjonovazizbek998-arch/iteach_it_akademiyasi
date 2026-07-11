@@ -122,4 +122,119 @@ class ApiService {
       }),
     );
   }
+
+  Future<http.Response> leaderBoard(
+    String token,
+    String data,
+    int page,
+    int? grupId,
+  ) async {
+    final Uri uri = Uri.parse("$url/leaderboard");
+    if (grupId != null) {
+      Uri uriBody = uri.replace(
+        queryParameters: {
+          "period": data.toString(),
+          "limit": "10",
+          "page": page.toString(),
+          "group_id": grupId.toString(),
+        },
+      );
+
+      return await http.get(
+        uriBody,
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer $token",
+        },
+      );
+    } else {
+      Uri uriBody = uri.replace(
+        queryParameters: {
+          "period": data.toString(),
+          "limit": "10",
+          "page": page.toString(),
+        },
+      );
+
+      return await http.get(
+        uriBody,
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer $token",
+        },
+      );
+    }
+  }
+
+  Future<http.Response> assignmentsGet(
+    String token,
+    String limit,
+    String offset,
+    String? groupId,
+  ) async {
+    final Uri uri = Uri.parse("$url/assignments");
+    if (groupId == null) {
+      Uri uriBody = uri.replace(
+        queryParameters: {"limit": limit, "offset": offset},
+      );
+      return await http.get(
+        uriBody,
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer $token",
+        },
+      );
+    } else {
+      Uri uriBody = uri.replace(
+        queryParameters: {
+          "limit": limit,
+          "offset": offset,
+          "group_id": groupId.toString(),
+        },
+      );
+      return await http.get(
+        uriBody,
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer $token",
+        },
+      );
+    }
+  }
+
+  Future<http.Response> submissionsGet(
+    String token,
+    String limit,
+    String offset,
+  ) async {
+    final Uri uri = Uri.parse("$url/submissions/my-submissions");
+    Uri uriBody = uri.replace(
+      queryParameters: {"limit": limit, "offset": offset},
+    );
+    return await http.get(
+      uriBody,
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer $token",
+      },
+    );
+  }
+
+  Future<http.Response> gradesGet(
+    String token,
+    String limit,
+    String offset,
+  ) async {
+    final Uri uri = Uri.parse("$url/grades/my-submissions");
+    Uri uriBody = uri.replace(
+      queryParameters: {"limit": limit, "offset": offset},
+    );
+    return await http.get(
+      uriBody,
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer $token",
+      },
+    );
+  }
 }

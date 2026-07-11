@@ -168,4 +168,64 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get invalidPhoneNumber => 'Phone number is empty or invalid';
+
+  @override
+  String get ratingLoading => 'Loading rating page data...';
+
+  @override
+  String get ratingLoadError =>
+      'An error occurred while loading rating page data';
+
+  @override
+  String get all => 'All';
+
+  @override
+  String get month => 'Month';
+
+  @override
+  String get week => 'Week';
+
+  @override
+  String get score => 'Score';
+
+  @override
+  String get tasksLoading => 'Loading tasks page data...';
+
+  @override
+  String get tasksLoadError =>
+      'An error occurred while loading tasks page data';
+
+  @override
+  String get noDataFound => 'No data found at the moment';
+
+  @override
+  String greetingWithName(Object name) {
+    return 'Peace be upon you, $name!';
+  }
+
+  @override
+  String get greatDayToLearn => 'Today is a great day to learn.';
+
+  @override
+  String fourItems(Object n) {
+    return '$n items';
+  }
+
+  @override
+  String get newTasks => 'New tasks';
+
+  @override
+  String get sentItems => 'Sent';
+
+  @override
+  String get submitTask => 'Submit task';
+
+  @override
+  String get noTasksAvailable => 'You have no tasks';
+
+  @override
+  String get taskFiles => 'Task files';
+
+  @override
+  String get gradedItems => 'Graded';
 }

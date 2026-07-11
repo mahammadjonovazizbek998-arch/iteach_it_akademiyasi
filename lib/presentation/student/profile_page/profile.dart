@@ -23,13 +23,12 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           myLanguage.profile,
-          style: TextStyle(color: myTheme.profilColor),
         ),
         centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.settings_outlined, color: myTheme.profilColor),
+            icon: Icon(Icons.settings_outlined,),
           ),
         ],
       ),
@@ -137,7 +136,6 @@ class ProfilePage extends StatelessWidget {
                                     padding: .all(8),
                                     child: Icon(
                                       Icons.login,
-                                      color: myTheme.profilColor,
                                     ),
                                   ),
                                 ),
@@ -158,7 +156,6 @@ class ProfilePage extends StatelessWidget {
                                     padding: .all(8),
                                     child: Icon(
                                       Icons.phone,
-                                      color: myTheme.profilColor,
                                     ),
                                   ),
                                 ),

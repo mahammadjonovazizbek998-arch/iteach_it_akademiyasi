@@ -24,7 +24,7 @@ void main() async {
       providers: [
         BlocProvider(create: (ctx) => ThemeCubit()),
         BlocProvider(create: (ctx) => LoginCubit()),
-        BlocProvider(create: (ctx) => ApiCubit(loginCubit: LoginCubit())),
+        BlocProvider(create: (ctx) => ApiCubit(loginCubit: ctx.read<LoginCubit>())),
       ],
       child: const MyApp(),
     ),

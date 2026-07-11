@@ -5,8 +5,13 @@ import 'package:iteach_it_akademiyasi/data/auth_service.dart';
 import 'package:iteach_it_akademiyasi/data/users/groups/group_class.dart';
 import 'package:iteach_it_akademiyasi/data/users/groups/login_class.dart';
 import 'package:iteach_it_akademiyasi/data/users/groups/student_groups_class.dart';
+import 'package:iteach_it_akademiyasi/data/users/leaderBoard/leader_board.dart';
+import 'package:iteach_it_akademiyasi/data/users/tasks/assignments/assignments_get.dart';
+import 'package:iteach_it_akademiyasi/data/users/tasks/submissions/submissions_get.dart';
 import 'package:iteach_it_akademiyasi/data/users/users/users.dart';
 import 'package:iteach_it_akademiyasi/data/users/users/users_profile.dart';
+import 'package:open_filex/open_filex.dart';
+import 'package:path_provider/path_provider.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -44,6 +49,11 @@ class AuthRepository {
         if (data["error"] != null) {
           return data["error"]["message"] ?? "Xatolik yuz berdi";
         }
+        await setSharedPreferences(
+          Token.fromJson(data).accessToken,
+          Token.fromJson(data).refreshToken,
+          Token.fromJson(data).role,
+        );
         return Token.fromJson(data);
       }
       return data["message"];
@@ -208,7 +218,7 @@ class AuthRepository {
   Future<dynamic> putProfile(String token, IProfile iProfile) async {
     try {
       final response = await _apiService.putProfile(token, iProfile);
-      print("salom ${response.statusCode}");
+
       if (response.statusCode < 400) {
         return "200";
       }
@@ -218,5 +228,104 @@ class AuthRepository {
     } catch (e) {
       return e.toString();
     }
+  }
+
+  Future<dynamic> leaderBoard(
+    String token,
+    String data,
+    int page,
+    int? grupId,
+  ) async {
+    try {
+      final response = await _apiService.leaderBoard(token, data, page, grupId);
+      if (response.statusCode < 400) {
+        final Map<String, dynamic> data = jsonDecode(response.body);
+        return LeaderBoard.formJson(data);
+      }
+      if (response.statusCode == 401) {
+        return "401";
+      }
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  Future<dynamic> assignmentsGet(
+    String token,
+    String limit,
+    String offset,
+    String? groupId,
+  ) async {
+    try {
+      final response = await _apiService.assignmentsGet(
+        token,
+        limit,
+        offset,
+        groupId,
+      );
+      if (response.statusCode < 400) {
+        final List<dynamic> dataList = jsonDecode(response.body);
+
+        List<AssignmentsGet> groups = dataList
+            .map((json) => AssignmentsGet.formJson(json))
+            .toList();
+        return groups;
+      } else if (response.statusCode == 401) {
+        return "401";
+      }
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  Future<dynamic> submissionsGet(
+    String token,
+    String limit,
+    String offset,
+  ) async {
+    try {
+      final response = await _apiService.submissionsGet(token, limit, offset);
+      if (response.statusCode < 400) {
+        final List<dynamic> dataList = jsonDecode(response.body);
+        List<SubmissionsGet> groups = dataList
+            .map((json) => SubmissionsGet.formJson(json))
+            .toList();
+        return groups;
+      } else if (response.statusCode == 401) {
+        return "401";
+      }
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  Future<dynamic> gradesGet(String token, String limit, String offset) async {
+    try {
+      final response = await _apiService.gradesGet(token, limit, offset);
+      if (response.statusCode < 400) {
+        final List<dynamic> dataList = jsonDecode(response.body);
+
+        List<SubmissionsGet> groups = dataList
+            .map((json) => SubmissionsGet.formJson(json))
+            .toList();
+        return groups;
+      } else if (response.statusCode == 401) {
+        return "401";
+      }
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  Future<void> fileManager(String file) async {
+
+    try {
+      List<int> faylBaytlari=base64Decode(file);
+      Directory papka = await getApplicationDocumentsDirectory();
+      String faylManzili="${papka.path}/mening_hujjatim.pdf";
+      File yangiFayl=File(faylManzili);
+      await yangiFayl.writeAsBytes(faylBaytlari);
+      await OpenFilex.open(faylManzili);
+    } catch (e) {}
   }
 }

@@ -405,6 +405,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Phone number is empty or invalid'**
   String get invalidPhoneNumber;
+
+  /// No description provided for @ratingLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading rating page data...'**
+  String get ratingLoading;
+
+  /// No description provided for @ratingLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'An error occurred while loading rating page data'**
+  String get ratingLoadError;
+
+  /// No description provided for @all.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get all;
+
+  /// No description provided for @month.
+  ///
+  /// In en, this message translates to:
+  /// **'Month'**
+  String get month;
+
+  /// No description provided for @week.
+  ///
+  /// In en, this message translates to:
+  /// **'Week'**
+  String get week;
+
+  /// No description provided for @score.
+  ///
+  /// In en, this message translates to:
+  /// **'Score'**
+  String get score;
+
+  /// No description provided for @tasksLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading tasks page data...'**
+  String get tasksLoading;
+
+  /// No description provided for @tasksLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'An error occurred while loading tasks page data'**
+  String get tasksLoadError;
+
+  /// No description provided for @noDataFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No data found at the moment'**
+  String get noDataFound;
+
+  /// No description provided for @greetingWithName.
+  ///
+  /// In en, this message translates to:
+  /// **'Peace be upon you, {name}!'**
+  String greetingWithName(Object name);
+
+  /// No description provided for @greatDayToLearn.
+  ///
+  /// In en, this message translates to:
+  /// **'Today is a great day to learn.'**
+  String get greatDayToLearn;
+
+  /// No description provided for @fourItems.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} items'**
+  String fourItems(Object n);
+
+  /// No description provided for @newTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'New tasks'**
+  String get newTasks;
+
+  /// No description provided for @sentItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent'**
+  String get sentItems;
+
+  /// No description provided for @submitTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit task'**
+  String get submitTask;
+
+  /// No description provided for @noTasksAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'You have no tasks'**
+  String get noTasksAvailable;
+
+  /// No description provided for @taskFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Task files'**
+  String get taskFiles;
+
+  /// No description provided for @gradedItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Graded'**
+  String get gradedItems;
 }
 
 class _AppLocalizationsDelegate

@@ -7,6 +7,10 @@ sealed class ApiState {
   final List<GroupClass>? groupClass;
   final IProfile? iProfile;
   final UsersProfile? usersProfile;
+  final LeaderBoard? leaderBoard;
+  final List<AssignmentsGet>? assignmentsGet;
+  final List<SubmissionsGet>? submissionsGet;
+  final List<SubmissionsGet>? gradesGet;
 
   const ApiState({
     required this.currentIndex,
@@ -14,6 +18,10 @@ sealed class ApiState {
     this.groupClass,
     this.usersProfile,
     this.iProfile,
+    this.leaderBoard,
+    this.assignmentsGet,
+    this.submissionsGet,
+    this.gradesGet,
   });
 }
 
@@ -32,6 +40,10 @@ final class ApiFinish extends ApiState {
     required super.groupClass,
     required super.usersProfile,
     required super.iProfile,
+    required super.leaderBoard,
+    required super.assignmentsGet,
+    required super.submissionsGet,
+    required super.gradesGet,
   });
 }
 

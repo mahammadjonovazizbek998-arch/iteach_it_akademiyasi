@@ -172,4 +172,66 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get invalidPhoneNumber =>
       'Telefon raqami bo‘sh yoki noto‘g‘ri kiritilgan';
+
+  @override
+  String get ratingLoading =>
+      'Reyting sahifasi ma\'lumotlari tayyorlanmoqda...';
+
+  @override
+  String get ratingLoadError =>
+      'Reyting sahifasi ma\'lumotlarini olishda xatolik yuz berdi';
+
+  @override
+  String get all => 'Barchasi';
+
+  @override
+  String get month => 'Oy';
+
+  @override
+  String get week => 'Hafta';
+
+  @override
+  String get score => 'Ball';
+
+  @override
+  String get tasksLoading =>
+      'Topshiriqlar sahifasi ma\'lumotlari tayyorlanmoqda...';
+
+  @override
+  String get tasksLoadError =>
+      'Topshiriqlar sahifasi ma\'lumotlarini olishda xatolik yuz berdi';
+
+  @override
+  String get noDataFound => 'Hozircha ma\'lumotlar mavjud emas';
+
+  @override
+  String greetingWithName(Object name) {
+    return 'Assalomu alaykum, $name!';
+  }
+
+  @override
+  String get greatDayToLearn => 'Bugun o\'rganish uchun ajoyib kun.';
+
+  @override
+  String fourItems(Object n) {
+    return '$n ta';
+  }
+
+  @override
+  String get newTasks => 'Yangi topshiriqlar';
+
+  @override
+  String get sentItems => 'Yuborilganlar';
+
+  @override
+  String get submitTask => 'Topshiriq topshirish';
+
+  @override
+  String get noTasksAvailable => 'Sizning topshiriqlaringiz mavjud emas';
+
+  @override
+  String get taskFiles => 'Vazifa fayllari';
+
+  @override
+  String get gradedItems => 'Baholanganlar';
 }
